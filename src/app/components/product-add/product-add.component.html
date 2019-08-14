@@ -1,0 +1,18 @@
+<div class="form-wrapper">
+  <form [formGroup]="form" (ngSubmit)="onAdd()">
+    <div class="form-group">
+      <label>Name</label>
+      <input formControlName="name" type="text" class="form-control" required>
+    </div>
+
+    <div class="form-group">
+      <label>Category</label>
+      <select formControlName="categoryId" class="form-control" required>
+        <option *ngFor="let category of categories" [value]="category.id">{{category.name}}</option>
+      </select>
+    </div>
+
+    <button type="submit" class="btn btn-success">Add</button>
+
+  </form>
+</div>

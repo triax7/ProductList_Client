@@ -1,0 +1,6 @@
+<div class="products-wrapper" *ngIf="products">
+  <div class="product" *ngFor="let product of products">
+    Name: {{product.name}} | Category: {{product.category.name}}
+  </div>
+</div>
+<pagination [itemsPerPage]="10" [totalItems]="totalProducts" (pageChanged)="pageChanged($event)"></pagination>
